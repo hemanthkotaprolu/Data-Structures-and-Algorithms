@@ -1,6 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+bool checkTwo(string str1, string str2, int n, int m) {
+    if(m == 0)
+        return true;
+    
+    if(n == 0 && m > 0)
+        return false;
+    
+    if(str1[n] == str2[m]) {
+        n--;
+        m--;
+    } else {
+        n--;
+    }
+    
+    return checkTwo(str1, str2, n, m);
+}
+
+/*
+    It is better to always check from back if we are using two pointer approach.
+    Because there wont be need to send the sizes of arrays, vectors, strings
+*/
+
 bool check(string str1, string str2, int i, int j) {
     if(j == str2.size()) {
         return true;
@@ -15,8 +37,9 @@ bool check(string str1, string str2, int i, int j) {
     } else {
         i++;
     }
-    return check(str1, str2, i, j);
+    return checkTwo(str1, str2, str1.size(), str2.size());
 }
+
 
 bool recursiveBetterCheck(string str1, string str2) {
     if(str1.size() < str2.size()) {
