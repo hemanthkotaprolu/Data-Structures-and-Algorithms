@@ -23,7 +23,7 @@ void rabin_karp(string txt, string pat) {
     int d = 5, p = getHash(pat, d), t = getHash(txt.substr(0, pat.length()), d);
 
     if(p == t) {
-        cout << 0 << " ';"
+        cout << 0 << " ";
     }
 
     for(int i = 1; i <= txt.length() - pat.length(); i++) {
