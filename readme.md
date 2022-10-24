@@ -8,3 +8,4 @@ Completed Topics:
   1. Searching
   1. Hashing
   1. Strings
+  1. Linked List
