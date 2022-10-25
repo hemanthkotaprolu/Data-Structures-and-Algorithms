@@ -1,3 +1,13 @@
+/**
+ * @file insertAtEnd.cpp
+ * @author Kotaprolu Hemanth (kotaproluhemanth@gmail.com)
+ * @brief Given head pointer and a value x insert at the end of the linked list with data = x
+ * @date 2022-10-25
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 
