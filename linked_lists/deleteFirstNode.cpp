@@ -59,8 +59,8 @@ Node *deleteFirstNode(Node *head) {
     
     Node *temp = head->next;
     
-    head->next = NULL;
-    head = temp;
+    
+    delete head;
     
     return temp;
 }
@@ -78,7 +78,7 @@ int main() {
     printList(head);
     
     cout << "----------------After Deleting----------------" << endl;
-    head = deleteFirstNode(NULL);
+    head = deleteFirstNode(head);
     printList(head);
     
     return 0;
