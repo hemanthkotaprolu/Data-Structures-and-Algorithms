@@ -59,7 +59,6 @@ Node *deleteFirstNode(Node *head) {
     
     Node *temp = head->next;
     
-    
     delete head;
     
     return temp;
