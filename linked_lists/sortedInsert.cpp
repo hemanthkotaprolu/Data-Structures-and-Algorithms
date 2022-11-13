@@ -30,6 +30,10 @@ void printList(Node *head) {
     cout << endl;
 }
 
+Node *sortedInsert(Node *head, int x) {
+    Node *temp = new Node(x), *curr = head;
+}
+
 int main() {
     
     Node *head = new Node(10);
@@ -38,7 +42,14 @@ int main() {
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
     
+    int x = 25;
     
+    cout << "**********" << endl;
+    printList(head);
+    
+    cout << "**********" << endl;
+    head = sortedInsert(head, x);
+    printList(head);
     
     return 0;
 }
