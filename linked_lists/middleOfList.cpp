@@ -30,31 +30,29 @@ void printList(Node *head) {
     cout << endl;
 }
 
-Node *sortedInsert(Node *head, int x) {
-    Node *temp = new Node(x), *curr = head;
+int getListLength(Node *head) {
+    int ans = 0;
     
-    if(head == NULL) {
-        return temp;
+    Node *curr = head;
+    
+    while(curr != NULL) {
+        ans++;
+        curr = curr->next;
     }
     
-    if(x >= curr->data) {
-        while(curr->next != NULL) {
-            if(curr->next->data < x) {
-                curr = curr->next;
-            } else {
-                break;
-            }
-        }
-        
-        temp->next = curr->next;
-        curr->next = temp;
-    } else {
-        temp->next = head;
-        head = temp;
+    return ans;
+}
+
+int middleElement(Node *head) {
+    int val = getListLength(head)/2;
+    
+    Node *temp = head;
+    
+    for(int i=1; i < val; i++) {
+        temp = temp->next;
     }
     
-    
-    return head;
+    return temp->next->data;
 }
 
 int main() {
@@ -64,16 +62,13 @@ int main() {
     head->next = new Node(20);
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
-    head->next->next->next->next = new Node(50);
+    // head->next->next->next->next = new Node(50);
     
-    int x = 45;
     
     cout << "**********" << endl;
     printList(head);
     
-    cout << "**********" << endl;
-    head = sortedInsert(head, x);
-    printList(head);
+    cout << middleElement(head) << endl;
     
     return 0;
 }
