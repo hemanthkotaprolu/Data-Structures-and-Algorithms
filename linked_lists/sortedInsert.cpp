@@ -32,6 +32,29 @@ void printList(Node *head) {
 
 Node *sortedInsert(Node *head, int x) {
     Node *temp = new Node(x), *curr = head;
+    
+    if(head == NULL) {
+        return temp;
+    }
+    
+    if(x >= curr->data) {
+        while(curr->next != NULL) {
+            if(curr->next->data < x) {
+                curr = curr->next;
+            } else {
+                break;
+            }
+        }
+        
+        temp->next = curr->next;
+        curr->next = temp;
+    } else {
+        temp->next = head;
+        head = temp;
+    }
+    
+    
+    return head;
 }
 
 int main() {
