@@ -43,16 +43,20 @@ int getListLength(Node *head) {
     return ans;
 }
 
-int middleElement(Node *head) {
+void middleElement(Node *head) {
     int val = getListLength(head)/2;
     
     Node *temp = head;
+    
+    if(head == NULL) {
+        cout << endl;
+    }
     
     for(int i=1; i < val; i++) {
         temp = temp->next;
     }
     
-    return temp->next->data;
+    cout << temp->next->data << endl;
 }
 
 int main() {
@@ -68,7 +72,7 @@ int main() {
     cout << "**********" << endl;
     printList(head);
     
-    cout << middleElement(head) << endl;
+    middleElement(head);
     
     return 0;
 }
