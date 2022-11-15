@@ -16,10 +16,12 @@ using namespace std;
 struct Node {
     int data;
     Node *next;
+    bool visited;
     
     Node(int data){
         this->data = data;
         this->next = NULL;
+        this->visited = false;
     }
 };
 
@@ -109,6 +111,20 @@ bool detectLoop(Node *head) {
     return false;
 }
 
+bool detectLoopModified(Node *head) {
+    Node *temp = head;
+    
+    while(temp != NULL) {
+        if(temp->visited) {
+            return true;
+        }
+        temp->visited = true;
+        temp = temp->next;
+    }
+    
+    return false;
+}
+
 int main() {
     
     Node *head = new Node(10);
@@ -117,9 +133,9 @@ int main() {
     head->next->next = new Node(12);
     head->next->next->next = new Node(20);
     
-    head->next->next->next->next = head->next;
+    // head->next->next->next->next = head->next;
     
-    detectLoop(head) ? cout << "YES" << endl :
+    detectLoopModified(head) ? cout << "YES" << endl :
                 cout << "NO" << endl;
     
     return 0;
