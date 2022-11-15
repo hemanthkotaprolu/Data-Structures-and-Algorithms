@@ -30,6 +30,21 @@ void printList(Node *head) {
     cout << endl;
 }
 
+int getListLength(Node *head) {
+    int ans = 0;
+    
+    Node *curr = head;
+    
+    while(curr != NULL) {
+        ans++;
+        curr = curr->next;
+    }
+    
+    return ans;
+}
+
+
+
 int main() {
     
     Node *head = new Node(10);
@@ -38,7 +53,9 @@ int main() {
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
     
+    head = insertInMiddle(head, 25);
     
+    printList(head);
     
     return 0;
 }
