@@ -66,6 +66,27 @@ Node *deleteFirstNode(Node *head) {
 
 Node *reverseList(Node *head) {
     
+    if(head == NULL) {
+        return NULL;
+    }
+    
+    if(head->next == NULL) {
+        return head;
+    }
+    
+    Node *nxt = head->next, *curr = head, *prev = NULL;
+    
+    while(nxt != NULL) {
+        curr->next = prev;
+        prev = curr;
+        curr = nxt;
+        
+        nxt = nxt->next;
+    }
+    
+    curr->next = prev;
+    
+    return curr;
 }
 
 int main() {
@@ -74,8 +95,14 @@ int main() {
     
     head->next = new Node(20);
     head->next->next = new Node(30);
+    head->next->next->next = new Node(40);
     
+    cout << "*********" << endl;
+    printList(head);
     
+    cout << "*********" << endl;
+    head = reverseList(head);
+    printList(head);
     
     return 0;
 }
