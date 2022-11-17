@@ -88,7 +88,7 @@ bool detectLoop(Node *head) {
 
 void detectRemoveLoop(Node *head) {
     Node *fast_ptr = head, *slow_ptr = head;
-    bool met = false;
+    // bool met = false;
     
     while(fast_ptr != NULL && fast_ptr->next != NULL) {        
         slow_ptr = slow_ptr->next;
@@ -103,7 +103,8 @@ void detectRemoveLoop(Node *head) {
         return;
     }
     
-    while(slow_ptr->next != fast_ptr->next) {
+    slow_ptr = head;
+    while(slow_ptr != fast_ptr) {
         slow_ptr = slow_ptr->next;
         fast_ptr = fast_ptr->next;
     }
@@ -118,12 +119,14 @@ int main() {
     
     head->next = new Node(20);
     head->next->next = new Node(30);
-    head->next->next->next = head;
+    head->next->next->next = new Node(40);
+    head->next->next->next->next = new Node(50);
+    head->next->next->next->next = head->next;
     
     int x = 5;
     
     cout << "*************" << endl;
-    printCLL(head);
+    // printCLL(head);
     
     cout << "*************" << endl;
     detectRemoveLoop(head);
