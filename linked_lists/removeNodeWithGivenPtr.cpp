@@ -127,6 +127,15 @@ void removeNodeWithGivenPtr(Node *ptr) {
     prev->next = NULL;
 }
 
+void removeNodeWithGivenPtrModified(Node *ptr) {
+    Node *temp = ptr->next;
+    
+    ptr->data = temp->data;
+    ptr->next = ptr->next->next;
+    
+    delete(temp);
+}
+
 int main() {
     
     Node *head = new Node(10);
@@ -143,7 +152,7 @@ int main() {
     
     cout << "************" << endl;
     
-    removeNodeWithGivenPtr(head->next);
+    removeNodeWithGivenPtrModified(head->next);
     printList(head);
     
     return 0;
