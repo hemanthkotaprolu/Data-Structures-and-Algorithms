@@ -9,3 +9,4 @@ Completed Topics:
   1. Hashing
   1. Strings
   1. Linked List
+  1. Stacks
