@@ -4,9 +4,9 @@
 This repo contains the work that is done as a part of GFG course. 
 
 Completed Topics:
-  1. Arrays
-  1. Searching
-  1. Hashing
-  1. Strings
-  1. Linked List
-  1. Stacks
+  * `Topic: 1`: Arrays
+  * `Topic: 2`: Searching
+  * `Topic: 3`: Hashing
+  * `Topic: 4`: Strings
+  * `Topic: 5`: Linked List
+  * `Topic: 6`: Stacks
