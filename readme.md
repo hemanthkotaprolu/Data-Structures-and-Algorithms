@@ -1,4 +1,4 @@
-# GFG-DSA SELF PACED
+# GFG-DSA SELF PACED(resumed: 1 Jan) 
 ### Data Structures and Algorithms
 
 This repo documents the work that is done as a part of GFG course. 
