@@ -39,7 +39,10 @@ class TwoStacks {
                 return -1;
             }
             
-            return arr[pos1];
+            int temp = arr[pos1];
+            pos1--;
+            
+            return temp;
         }
         
         int pop2() {
@@ -48,7 +51,10 @@ class TwoStacks {
                 return -1;
             }
             
-            return arr[pos2];
+            int temp = arr[pos2];
+            pos2++;
+            
+            return temp;
         }
         
         int size1() {
