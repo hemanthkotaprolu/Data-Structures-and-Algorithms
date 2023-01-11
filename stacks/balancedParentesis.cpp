@@ -40,6 +40,6 @@ int main() {
     
     cout << boolalpha;
     cout << checkParenthesis(str) << endl;
-    
+
     return 0;
 }
